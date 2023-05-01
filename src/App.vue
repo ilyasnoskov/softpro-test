@@ -95,7 +95,7 @@ export default {
       <div class="todo" v-for="todo in completeTodo">
         <span v-bind:id="todo.id">
 <!--          <input class="form-check-input" type="checkbox" value="" v-bind:id="todo.id" disabled checked>-->
-          <label for="{{todo.id}}" @dblclick="changeTodo(todo.id)" v-if="!todo.isChanging"
+          <label class="completeTodo-text" for="{{todo.id}}" @dblclick="changeTodo(todo.id)" v-if="!todo.isChanging"
                  v-bind:id="todo.id">{{ todo.text }}</label>
           <input v-on:keyup.enter="changeTodoText(todo.id,$event.target.value)" v-else-if="todo.isChanging"
                  v-model="todo.text" v-bind:id="todo.id">
